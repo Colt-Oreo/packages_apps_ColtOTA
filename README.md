@@ -67,9 +67,6 @@ Please be aware of the rules regarding [special characters in XML documents](htt
 ```
 You should also use Markdown for the changelog. This allows easy formatting for you and it renders really well in the app. You can use full Markdown for this, including links and images (be aware of screen sizes, though). The example above shows some basic Markdown in the changelog tags. 
 
-Here are some useful links to help with Markdown:-
-- [http://dillinger.io/](http://dillinger.io/) -  to help checking how it looks visually
-- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/markdown-Cheatsheet)
 
 #### Using an optional Addons XML
 
@@ -88,7 +85,7 @@ You should format it like this:
             <updated-at>2014-12-24</updated-at> <!-- Must be in yyyy-mm-dd format -->
             <size>9001027</size> <!-- filesize in bytes -->
             <download-link>
-            http://xyyx-dev.ru/nitrogen-os/nougat/geehrc/addon1.zip
+            https://raw.githubusercontent.com/Colt-Oreo/services_apps_ColtOTA/cos8.x/addon1.zip
             </download-link>
         </addon>
         <addon>
@@ -98,7 +95,7 @@ You should format it like this:
             <updated-at>2014-10-14</updated-at> <!-- Must be in yyyy-mm-dd format -->
             <size>5427814</size> <!-- filesize in bytes -->
             <download-link>
-            http://xyyx-dev.ru/nitrogen-os/nougat/geehrc/addon2.zip
+            https://raw.githubusercontent.com/Colt-Oreo/services_apps_ColtOTA/cos8.x/addon2.zip
             </download-link>
         </addon>
     </addons>
@@ -110,7 +107,7 @@ Doing this, you should add these following elements to the bottom of your OTA XM
 ```XML
 <AddonCount>2</AddonCount>
 <AddonsURL>
-http://xyyx-dev.ru/nitrogen-os/nougat/geehrc/addons.xml
+https://raw.githubusercontent.com/Colt-Oreo/services_apps_ColtOTA/cos8.x/addons.xml
 </AddonsURL>
 ```
 Taking care to provide a direct link to your XML in the AddonsUrl tag, and providing an accurate count in the AddonCount tag.
@@ -124,7 +121,7 @@ At the bottom of your build.prop, add the following values editing them to suit 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ota.romname=ColtOS-ROM \
     ro.ota.version=$(shell date +"%Y%m%d") \
-    ro.ota.manifest=http://xyyx-dev.ru/nitrogen-os/nougat/geehrc/ota.xml
+    ro.ota.manifest=https://raw.githubusercontent.com/Colt-Oreo/services_apps_ColtOTA/cos8.x/tomato.xml
 ```
   
 Please pay CLOSE attention to the ro.ota.version entry. This is not your particular ROM version (v6.5 or v1.2.5, for example) this is a value for the OTA app to determine if an update is available. Your NEXT version should be numerically higher than this. You may use value you like, so long as it is an integer and successive updates are larger.
